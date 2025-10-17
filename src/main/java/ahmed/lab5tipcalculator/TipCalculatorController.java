@@ -24,16 +24,16 @@ public class TipCalculatorController {
     private void initialize() {
         currency.setRoundingMode(RoundingMode.HALF_UP);
 
-        // 🔹 Bind label text directly to slider’s value (like “15%”)
+  
         tipPercentageLabel.textProperty().bind(
                 Bindings.format("%.0f%%", tipPercentageSlider.valueProperty())
         );
 
-        // 🔹 Recalculate automatically when amount or slider changes
+      
         amountTextField.textProperty().addListener((obs, oldVal, newVal) -> calculate());
         tipPercentageSlider.valueProperty().addListener((obs, oldVal, newVal) -> calculate());
 
-        // Optional: perform one initial calculation
+    
         calculate();
     }
 
